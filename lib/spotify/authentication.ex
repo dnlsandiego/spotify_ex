@@ -53,8 +53,8 @@ defmodule Spotify.Authentication do
     auth |> body_params(code) |> AuthenticationClient.post()
   end
 
-  def authenticate(_, _) do
-    raise AuthenticationError, "No code provided by Spotify. Authorize your app again"
+  def authenticate(conn_or_auth, _) do
+    {:error, :denied_access, conn_or_auth}
   end
 
   @doc """
