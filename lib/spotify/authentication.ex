@@ -54,7 +54,7 @@ defmodule Spotify.Authentication do
   end
 
   def authenticate(conn_or_auth, _) do
-    {:error, :denied_access, conn_or_auth)
+    {:error, :denied_access, conn_or_auth}
   end
 
   @doc """
